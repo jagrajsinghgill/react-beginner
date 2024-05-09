@@ -1,15 +1,11 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { React } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div>
-        <h1>Hello World !</h1>
+      <div className="large" id="largeDiv">
+        <label htmlFor="inputId">Number</label>
+        <input type="number" id="inputId" defaultValue={3} />
       </div>
     </>
   );
