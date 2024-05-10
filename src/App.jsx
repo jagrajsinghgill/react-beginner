@@ -1,18 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import "./assets/user.css";
+import user from "./data/user.json";
+import { UserCard } from "./components/UserCard/UserCard";
+import { UserCardClass } from "./components/UserCardClass/UserCardClass";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <h1>Hello World !</h1>
-      </div>
-    </>
-  );
+    <div>
+      <h1>Function Component</h1>
+      <UserCard userData={user}/>
+      <br />
+      <h1>Class Component</h1>
+      <UserCardClass name={user?.name} age={user?.age} phone={user?.phoneNumber} address={user?.address}/>
+    </div>
+  )
 }
 
-export default App;
+export default App
