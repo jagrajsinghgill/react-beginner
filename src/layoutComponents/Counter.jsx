@@ -12,7 +12,7 @@ export function Counter() {
   
     // To use the counter value multiple times so
     // that it can be increased twice using single click.
-    
+
     // setCounter((currCounter) => {
     //   return currCounter + 1;
     // })
@@ -32,7 +32,7 @@ export function Counter() {
   return (
     <>
     {/* <h1>Hi {object.name} {object.lastName}</h1> */}
-    <h1 onClick={handleClick}>Counter : {counter}</h1>
+    <h1 onClick={handleClick}>Function Counter : {counter}</h1>
     </>
   )
 }
