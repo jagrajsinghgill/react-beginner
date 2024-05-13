@@ -9,17 +9,23 @@ export function Counter() {
 
     // To directly increase the counter
     setCounter(currCounter => currCounter + 1);
-    // setObject(currObj => {
-    //   return { ...currObj, lastName: "Gill again!" }
-    // })
+  
     // To use the counter value multiple times so
     // that it can be increased twice using single click.
+    
     // setCounter((currCounter) => {
     //   return currCounter + 1;
     // })
 
     // setCounter((currCounter) => {
     //   return currCounter + 1;
+    // })
+
+    // Object updating using prev object so that
+    // it updates particular key only and not the whole object.
+
+    // setObject(currObj => {
+    //   return { ...currObj, lastName: "Gill again!" }
     // })
   }
 
