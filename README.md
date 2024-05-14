@@ -1,4 +1,4 @@
 # Stateful Components
 
-- Array State Project
-![array-state-project-output](image.png)
+- Counter With Name Project
+![counter-with-name-project-output](image.png)
