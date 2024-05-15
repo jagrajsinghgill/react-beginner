@@ -1,18 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { useState } from "react"
+import { Child } from "./Child"
 
-function App() {
-  const [count, setCount] = useState(0);
+export default function App() {
+  const [show, setShow] = useState(true)
+
+  const childComponent = show ? <Child /> : null
 
   return (
-    <>
-      <div>
-        <h1>Hello World !</h1>
-      </div>
-    </>
-  );
+    <div>
+      <button onClick={() => setShow(currentShow => !currentShow)}>
+        Show/Hide
+      </button>
+      {childComponent}
+    </div>
+  )
 }
-
-export default App;
