@@ -1,29 +1,29 @@
 # Before Getting Started
 
-This project is a bit different since the starting code is a fully working React application. All you need to do is run `npm i` and `npm run dev` to install all dependencies and run the application. You will notice that this code looks nearly identical to the previous project. The only change is I added a button that will toggle between hiding and showing the `Child` component. This is just there to help us test mounting and unmounting of our component.
+If you want you can open the `app.html` file in your browser to see what the final version of this application should look like. Your application should match the output exactly to what the `app.html` file renders.
 
-You may also notice I have removed `StrictMode` from the `main.jsx` file. I did this to make understanding and deciphering this exercise easier. We will cover what this does in just a few videos.
+**BONUS:** If you decide to do the bonus loading section you can view the `loading.html` file for an example of what the page should look like while loading.
+
+If the API we use in this video is unavailable, or different in anyway to what I show in the video you can use the `users.json` file as an alternative to the API. If you place the `users.json` file in the `public` folder of your project you can fetch it by running `fetch("users.json")` in your code.
 
 
 # Instructions
 
-The following exercises should all be performed within the `Child` component.
-
-1. `console.log` the text **Render** each time the component re-renders
-2. `console.log` the text **Hi** when the component mounts
-3. `console.log` the text **My name is {name} and I am {age} years old** whenever the `name` or `age` changes
-4. Update the `document.title` to be equal to `name` whenever the `name` changes
+1. Fetch all users from the API (https://jsonplaceholder.typicode.com/users) in your App.jsx file using `useEffect`.
+2. Render an `h1` that says **User List** and below that a `ul` containing a list of all users. This is a perfect use case for fragments since we don't want to wrap it in an extra div.
+3. The users in the list should be in their own component and that component should take a `name` prop and return the `name` inside an `li` element.
 
 ## Bonus
 
-1. `console.log` the text **Bye** when the component unmounts
-2. Create a timeout that `console.log`s the text **My name is {name}** only after there has been a 1 second delay since the last time the name was changed.
-    * For example, if I change the name from **Kyle** to **Kyl** and then to **Ky** without having more than 1 second between each name change the console should log nothing until 1 second after I finishing changing the name to **Ky** and then it will log **Ky**. If instead there as greater than 1 second delay between each change, it should log **Kyl** and then **Ky**. Each of those logs would happen exactly 1 second after the name was changed.
+1. Add a loading state that will display the text `Loading...` instead of the user list while it is being downloaded from the API.
+    * You can use your dev tools to throttle your network speed to more easily test the loading. Go to the **Network** tab, click the **No Throttling** drop down and choose **Slow 3G**. 
 
 ===============
 
-# Stateful Components
-- 26 - useEffect Hook Exercises Introduction.
+# Advanced Components
+- 37 - User List Project Introduction
 
 # Solution OUTPUT
-![useEffect hook exercises output](image.png)
+![user list project output](image.png)
+![user list project loader output](image2.png)
+![user list project error output](image3.png)
