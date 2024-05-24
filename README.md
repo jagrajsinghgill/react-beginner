@@ -1,23 +1,23 @@
 # Before Getting Started
 
-The starting code for this project includes all the JSX/logic of using the hook already. The only thing you need to do is implement the `useArray` hook and import it into the `App.jsx` file.
+The starting code for this project includes all the JSX/logic of using the hook already. The only thing you need to do is implement the `useLocalStorage` hook and import it into the `App.jsx` file. Also, the code for the bonus section of the course is included but just commented out so you can uncomment those lines whenever you tackle the bonus sections.
+
+This project is a step up in difficulty from the last few (especially the bonus sections) so don't worry if this is a bit of a struggle.
 
 # Instructions
 
-1. Create a custom `useArray` hook that takes an array (or a function that returns an array) as its only argument, stores that array in state, and returns an object with the following properties:
-    * `array` - This is the array stored in state
-    * `set` - This is just the set state function returned from `useState`
-    * `push` - A function that takes one argument and adds that argument to the end of the array
-    * `replace` - A function that takes two arguments (the index of the element to replace, and the new element to replace the old element with) and replaces the element at the specified index with the new element
-    * `filter` - A function that takes one argument (a callback function) and filters the array just like the `array.filter` method
-    * `remove` - A function that takes one argument (the index of the element to remove) and removes the element at the index specified
-    * `clear` - A function that will remove all elements from the array
-    * `reset` - A function that will reset the array to its initial value 
+1. Create a custom `useLocalStorage` hook that functions identically to `useState` by returning an array where the first element is the value and the second element is the function to set the value. This hook should take two arguments. The first is a string which is the key for `localStorage` and the second is the initial value of the state.
+2. Whenever the state changes it should be synced with `localStorage` so that if you were to refresh your page nothing would change as all values are pulled from `localStorage` on initial load and stored in `localStorage` when changed.
+
+## Bonus
+
+1. Ensure that the `useLocalStorage` hook works just like `useState` in that you can pass it a value or function as the initial value.
+2. Use JSON to serialize and deserialize the values stored in `localStorage` so that it will work with any value (such as arrays or objects). 
 
 ===============
 
 # Advanced Components
-- 52 - useArray Custom Hook Project
+- 53 - useLocalStorage Custom Hook Project
 
 # Solution OUTPUT
-![useArray Custom Hook Project output](image.png)
+![useLocalStorage Custom Hook Project](image.png)
