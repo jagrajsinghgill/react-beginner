@@ -1,23 +1,33 @@
 # Before Getting Started
 
-The starting code for this project includes all the JSX/logic of using the hook already. The only thing you need to do is implement the `useLocalStorage` hook and import it into the `App.jsx` file. Also, the code for the bonus section of the course is included but just commented out so you can uncomment those lines whenever you tackle the bonus sections.
+If you want you can open the `app.html` file in your browser to see what the final version of this application should look like. Your application should match the output exactly to what the `app.html` file renders. This includes all the class names you will need to work with this project.
 
-This project is a step up in difficulty from the last few (especially the bonus sections) so don't worry if this is a bit of a struggle.
+This project is a bit of a complex one (especially the bonus section) since it combines together many concepts from all across this course.
 
 # Instructions
 
-1. Create a custom `useLocalStorage` hook that functions identically to `useState` by returning an array where the first element is the value and the second element is the function to set the value. This hook should take two arguments. The first is a string which is the key for `localStorage` and the second is the initial value of the state.
-2. Whenever the state changes it should be synced with `localStorage` so that if you were to refresh your page nothing would change as all values are pulled from `localStorage` on initial load and stored in `localStorage` when changed.
+1. Create a form with an email and password input that check for the following validations:
+    * Email:
+        * Required (Cannot be blank)
+        * Must end in `@webdevsimplified.com`
+    * Password:
+        * Required (Cannot be blank)
+        * Must Be 10 characters or longer
+        * Must include a lowercase letter
+        * Must include an uppercase letter
+        * Must include a number
+2. Show error messages next to the inputs every time the form is submitted if there are any. If there are no errors alert the message `Success`.
+3. If you did the first 2 steps using refs, repeat the same thing with state instead. If you used state for the first 2 steps instead repeat the same thing with refs.
 
 ## Bonus
 
-1. Ensure that the `useLocalStorage` hook works just like `useState` in that you can pass it a value or function as the initial value.
-2. Use JSON to serialize and deserialize the values stored in `localStorage` so that it will work with any value (such as arrays or objects). 
+1. Make it so that the error messages show up when you submit the form (just like step 2), but also make it so the error messages will automatically update when you change the value in each input but only after the first time you submit the form.
+    * For example if you type in an email that is incorrect and submit the form it should show an error message. Then when you go back and start making changes to the email input, the error message should update with the current errors as you change the input and disappear when the input is valid.
 
 ===============
 
 # Advanced Components
-- 53 - useLocalStorage Custom Hook Project
+- 58-59 - Basic Form Validation Project
 
 # Solution OUTPUT
-![useLocalStorage Custom Hook Project](image.png)
+![Basic Form Validation Project](image.png)
