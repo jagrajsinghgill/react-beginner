@@ -1,15 +1,11 @@
-import "./assets/styles.css";
-import { MyFormWithRefs } from "./MyFormWithRefs";
-import { MyFormWithStates } from "./MyFormWithStates";
-import { RefForm } from "./RefForm";
-import { StateForm } from "./StateForm";
+import { ReducerHookComponent } from "./ReducerHookComponent";
 
 function App() {
   return (
     <>
-      {/* <MyFormWithRefs /> */}
-      {/* <MyFormWithStates /> */}
-      <RefForm />
+      {import.meta.env.VITE_URL}
+      <br />
+      <ReducerHookComponent />
     </>
   );
 }
