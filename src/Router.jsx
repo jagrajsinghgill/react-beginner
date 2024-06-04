@@ -1,19 +1,14 @@
-import {
-  Outlet,
-  createBrowserRouter,
-  useNavigation,
-  useRouteError,
-} from "react-router-dom";
-import "./assets/styles.css";
+import { createBrowserRouter, useRouteError } from "react-router-dom";
 import { Posts } from "./pages/Posts";
 import { Post } from "./pages/Post";
 import { Users } from "./pages/Users";
 import { Todos } from "./pages/Todos";
 import { Navbar } from "./components/Navbar";
 import { User } from "./pages/User";
+import { RootLayout } from "./components/layout/RootLayout";
 export const router = createBrowserRouter([
   {
-    element: <NavLayout />,
+    element: <RootLayout />,
     path: "/",
     errorElement: <ErrorBoundary />,
     children: [
@@ -26,35 +21,35 @@ export const router = createBrowserRouter([
         element: <NotFound />,
       },
       {
-        path: "/posts",
+        path: "posts",
         element: <Posts />,
         loader: ({ request: { signal } }) => {
           return fetch("http://127.0.0.1:3000/posts", { signal });
         },
       },
       {
-        path: "/post/:id",
+        path: "post/:id",
         element: <Post />,
         loader: ({ params, request: { signal } }) => {
           return fetch(`http://127.0.0.1:3000/posts/${params.id}`, { signal });
         },
       },
       {
-        path: "/users",
+        path: "users",
         element: <Users />,
         loader: ({ request: { signal } }) => {
           return fetch("http://127.0.0.1:3000/users", { signal });
         },
       },
       {
-        path: "/user/:id",
+        path: "user/:id",
         element: <User />,
         loader: ({ params, request: { signal } }) => {
           return fetch(`http://127.0.0.1:3000/users/${params.id}`, { signal });
         },
       },
       {
-        path: "/todos",
+        path: "todos",
         element: <Todos />,
         loader: ({ request: { signal } }) => {
           return fetch("http://127.0.0.1:3000/todos", { signal });
@@ -63,22 +58,6 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-
-function NavLayout() {
-  const { state } = useNavigation();
-  return (
-    <>
-      <Navbar />
-      {state === "loading" ? (
-        <div className="loading-spinner"></div>
-      ) : (
-        <div className="container">
-          <Outlet />
-        </div>
-      )}
-    </>
-  );
-}
 
 function ErrorBoundary() {
   const env = import.meta.env;
