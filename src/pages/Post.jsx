@@ -40,7 +40,8 @@ function reducer(state, { type }) {
 }
 
 export function Post() {
-  const { id, title, userId, body } = useLoaderData();
+  const postData = useLoaderData();
+  const { id, title, userId, body } = postData;
   const [{ isLoading, isError }, dispatch] = useReducer(reducer, {
     isLoading: true,
     isError: false,
@@ -108,7 +109,14 @@ export function Post() {
         <h1>There is some error</h1>
       ) : (
         <>
-          <h1 className="page-title">{title}</h1>
+          <h1 className="page-title">
+            {title}
+            <div className="title-btns">
+              <Link className="btn btn-outline" to={`/posts/${id}/edit`}>
+                Edit
+              </Link>
+            </div>
+          </h1>
           {user ? (
             <span className="page-subtitle">
               By: <Link to={`/user/${userId.toString()}`}>{user?.name}</Link>
